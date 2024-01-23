@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:08:03 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/22 19:46:39 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/23 18:15:32 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(void)
 
 	Ed.attack("Envy");
 	Env.takeDamage(2);
-	Ed.beRepaired(5);
+	Ed.beRepaired(500);
 
 	Env.attack("Edward");
 	Ed.takeDamage(3);
@@ -45,10 +45,10 @@ int main(void)
 	Ed.attack("Envy");
 	Env.takeDamage(1);
 	Ed.attack("Envy");
-	Env.takeDamage(1);
 	
 	for (int x = 0; x < 8; ++x)
-		Ed.attack("Envy");
-
-	Env.attack("Edward");
+		Env.attack("Ed");
+	Ed.attack("Envy");
+	Env.takeDamage(2);
+	Ed.takeDamage(3000000);
 }
