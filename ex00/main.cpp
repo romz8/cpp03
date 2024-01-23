@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:08:03 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/23 18:15:32 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:52:13 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(void)
 	ClapTrap	const Envy("Envy");
 	ClapTrap	Ed = Edward;
 	ClapTrap	Env(Envy);
+	ClapTrap	useless = ClapTrap();
 
 	Ed.attack("Envy");
 	Env.takeDamage(8);

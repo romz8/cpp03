@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:08:03 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/23 17:56:30 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/23 21:08:50 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,14 @@ int main()
 	std::cout << "\33[33m*************************" << std::endl;
     std::cout << "=== ScavTrap Tests ===" << std::endl;
 	std::cout << "*************************\33[0m" << std::endl;
+    
+    //constructor test (default, name, Assignement)
     ScavTrap scav("SC4V-TP");
+    std::cout << std::endl;
+    ScavTrap useless = ScavTrap();
+    std::cout << std::endl;
+    ScavTrap scav2 = scav;
+    std::cout << std::endl;
 
     scav.attack("Target B");
     scav.takeDamage(30);

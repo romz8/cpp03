@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:40:17 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/23 18:07:21 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:51:38 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@ void header_action(std::string name);
 
 /* Orthodox Canonical : Default Constructors, Copy constructor, Destructor Copy Assignment */
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _Name("Unamed"), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	ClapTrap("");
 	std::cout << "ClapTrap Default Constructor called " << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name):_Name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0) 
 {
-	std::cout << "ClapTrap Constructor called for : " << name << std::endl;
+	std::cout << "ClapTrap Named Constructor called for : " << name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src)
@@ -93,11 +92,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->_Name << " has : " << this->_HitPoints << " Hit points left";
 	std::cout << std::endl;
 	std::cout << " it repairs itself by " << amount << " number of points";
+	std::cout << std::endl;
 	this->_HitPoints += amount;
 	this->_EnergyPoints--;
-	std::cout << std::endl;
+	if (!_EnergyPoints)
+		std::cout << "\33[41mClapTrap " << this->_Name << " Died after running out of Energy Points\33[0m" << std::endl;
+	else
+		std::cout << " it now has : " << this->_EnergyPoints << " number of Energy points" << std::endl;
 	std::cout << " it now has : " << this->_HitPoints << " number of Hit points" << std::endl;
-	std::cout << " it now has : " << this->_EnergyPoints << " number of Energy points" << std::endl;
 }
 
 std::string	ClapTrap::getName(void) const
