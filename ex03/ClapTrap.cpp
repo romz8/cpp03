@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:40:17 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/23 20:53:20 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/24 13:58:04 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(void) : _Name("Unamed"), _HitPoints(10), _EnergyPoints(10), _
 
 ClapTrap::ClapTrap(std::string name):_Name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0) 
 {
-	std::cout << "ClapTrap Named Constructor called for : " << name << std::endl;
+	std::cout << "ClapTrap " << this->_Name << " Built with ClapTrap Constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src)
@@ -58,7 +58,6 @@ void ClapTrap::attack(const std::string& target)
 		std::cout << std::endl;
 		return ;
 	}
-	header_action(this->_Name);
 	std::cout << "ClapTrap " << this->_Name << " attacks " << target <<", causing ";
 	std::cout << this->_AttackDamage << " points of damage!" << std::endl;
 	this->_EnergyPoints--;
@@ -88,7 +87,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << std::endl;
 		return;
 	}
-	header_action(this->_Name);
 	std::cout << "ClapTrap " << this->_Name << " has : " << this->_HitPoints << " Hit points left";
 	std::cout << std::endl;
 	std::cout << " it repairs itself by " << amount << " number of points";
@@ -120,14 +118,4 @@ int ClapTrap::getEnergyPoints(void) const
 int ClapTrap::getAttackDamage(void) const
 {
 	return (this->_AttackDamage);
-}
-
-
-void header_action(std::string name)
-{
-	std::cout << std::endl;
-	std::cout << "\33[94m*********************** New Action ************************" << std::endl;
-	std::cout << "        ******* FROM: "<< name << " *******" << std::endl;
-	std::cout << "***********************************************************\33[0m" << std::endl;
-	std::cout << std::endl;
 }

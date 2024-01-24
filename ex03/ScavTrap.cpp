@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:53:02 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/23 21:01:08 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/24 13:45:27 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	this->_HitPoints = 100;
-	this->_EnergyPoints = 50;
-	this->_AttackDamage = 20;
+	this->_HitPoints = ScavHP;
+	this->_EnergyPoints = ScavEP;
+	this->_AttackDamage = ScavAP;
 	std::cout << "Nameless ScavTrap created with Default constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->_HitPoints = 100;
-	this->_EnergyPoints = 50;
-	this->_AttackDamage = 20;
-	std::cout << "ScavTrap created - built on top of CrapTrap Name : "<< this->getName() << std::endl;
+	this->_HitPoints = ScavHP;
+	this->_EnergyPoints = ScavEP;
+	this->_AttackDamage = ScavAP;
+	std::cout << "ScavTrap " << this->getName() << " Built with ScavTrap Constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src)

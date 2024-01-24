@@ -6,16 +6,19 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:04:40 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/23 17:01:58 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/24 13:44:51 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# define ScavHP 100
+# define ScavEP 50 
+# define ScavAP 20
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
 	ScavTrap(void);

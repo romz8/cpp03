@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:27:43 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/23 21:03:05 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/24 13:45:57 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	this->_HitPoints = 100;
-	this->_EnergyPoints = 100;
-	this->_AttackDamage = 30;
+	this->_HitPoints = FragHP;
+	this->_EnergyPoints = FragEP;
+	this->_AttackDamage = FragAP;
 	std::cout << "Built a FragTrap with Default (Nameless) Constructor" << std::endl;
 }
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	this->_HitPoints = 100;
-	this->_EnergyPoints = 100;
-	this->_AttackDamage = 30;
-	std::cout << "Built a FragTrap with its name Constructor" << std::endl;
+	this->_HitPoints = FragHP;
+	this->_EnergyPoints = FragEP;
+	this->_AttackDamage = FragAP;
+	std::cout << "FragTrap " << this->_Name << " built with its name Constructor" << std::endl;
 }
 FragTrap::FragTrap (const FragTrap& src)
 {
