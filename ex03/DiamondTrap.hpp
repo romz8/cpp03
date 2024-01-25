@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:12:10 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/24 13:53:55 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:14:24 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ public:
 	~DiamondTrap(void);
 	using ScavTrap::attack;
 	void whoAmI();
+	std::string	getName(void) const;
 };
+
+std::ostream& operator<<(std::ostream& so, const DiamondTrap& src);
 
 #endif

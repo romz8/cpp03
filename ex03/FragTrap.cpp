@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:27:43 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/24 13:45:57 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:10:50 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ FragTrap& FragTrap::operator=(const FragTrap& src)
 FragTrap::~FragTrap(void)
 {
 	std::cout << "Default FragTrap Destructor called on: " << this->getName() << std::endl;
-	std::cout << "now calling base class Destructor " <<  std::endl;
 }
+
+/****************** Member function **************************/
 void FragTrap::highFivesGuys(void)
 {
 	if (!(this->_EnergyPoints > 0 && this->_HitPoints > 0))
@@ -59,5 +60,5 @@ void FragTrap::highFivesGuys(void)
 		std::cout << std::endl;
 		return ;
 	}
-	std::cout << "FragTrap " << this->getName() << " is requesting a high five" << std::endl;
+	std::cout << "FragTrap : " << this->getName()<< " / ClapTrap name : " << this->_Name << " is requesting a high five" << std::endl;
 }

@@ -6,12 +6,12 @@
 #    By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:35:32 by rjobert           #+#    #+#              #
-#    Updated: 2024/01/24 12:27:53 by rjobert          ###   ########.fr        #
+#    Updated: 2024/01/24 16:05:04 by rjobert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-Flags = -Wall -Wextra -Werror -std=c++98 -pedantic -MMD -I ./
+Flags = -Wall -Wextra -Werror -Wshadow -std=c++98 -pedantic -MMD -I ./
 NAME = weird
 HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp

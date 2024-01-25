@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:11:59 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/24 13:53:26 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:17:33 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 /********************** Canonical Constructor / Destructors ******************/
 
-DiamondTrap::DiamondTrap(void) : ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(void) : ClapTrap("Unamed_clap_name"), ScavTrap(), FragTrap()
 {
+	this->_Name = "Unamed";
 	std::cout << "Default (Nameless) DiamondTrap constructor called" << std::endl;
 }
 
@@ -36,6 +37,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(), ScavTrap(), FragT
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &src)
 {
+	std::cout << "DiamondTrap operator = on " << this->_Name << std::endl;
 	if (this != &src)
 	{
 		this->_Name = src._Name;
@@ -43,7 +45,6 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &src)
 		this->_EnergyPoints = src.getEnergyPoints();
 		this->_AttackDamage = src.getAttackDamage();
 	}
-	std::cout << "DiamondTrap operator = on " << this->_Name << std::endl;
 	return (*this);
 }
 
@@ -52,10 +53,28 @@ DiamondTrap::~DiamondTrap(void)
 	std::cout << "Default DiamondTrap Destructor called on " << this->_Name << std::endl;
 }
 
+/*********************** Member Functions *************************************/
+
 void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "DiamondTrap name is " << this->_Name << std::endl;
 	std::cout << "DiamondTrap' ClapTrap name is " << this->ClapTrap::getName() << std::endl;
 }
+/*
+the purpose of this function is to use  Name looking function getName() in base class (changed to virtual)
+and therefore display diamdon name in derived class (Scav, Frag)
+*/
+std::string	DiamondTrap::getName(void) const
+{
+	return (this->_Name);
+}
 
+/********************** Overloading Stream Operator to check status ******/
 
+std::ostream& operator<<(std::ostream& os, const DiamondTrap& src)
+{
+	std::cout << "Diamond Hit Points: " << src.getHitPoints();
+	std::cout << ",  Diamond Energy Points: " << src.getEnergyPoints();
+	std::cout << ",  Diamond Attack Points: " << src.getAttackDamage();
+	return (os);
+}

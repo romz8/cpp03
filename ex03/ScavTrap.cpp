@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:53:02 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/24 13:45:27 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:02:37 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "Default ScavTrap Destructor called on: " << this->getName() << std::endl;
-	std::cout << "now calling base class Destructor " <<  std::endl;
 }
 
 void ScavTrap::guardGate(void)
@@ -72,11 +71,14 @@ void	ScavTrap::attack(const std::string& target)
 		std::cout << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << this->_Name << " does its special attack on " << target <<", causing ";
+	std::cout << "ScavTrap name : " << this->getName() << " / ClapTrap name : " << this->_Name;
+	std::cout <<  " does its special attack on " << target <<", causing ";
 	std::cout << this->_AttackDamage << " points of damage!" << std::endl;
 	this->_EnergyPoints--;
 	if (!_EnergyPoints)
 		std::cout << "\33[41mClapTrap " << this->_Name << " Died after running out of Energy Points\33[0m" << std::endl;
+		
 }
+
 
 

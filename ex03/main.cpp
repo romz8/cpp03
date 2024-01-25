@@ -6,7 +6,7 @@
 /*   By: rjobert <rjobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:08:03 by rjobert           #+#    #+#             */
-/*   Updated: 2024/01/24 13:56:20 by rjobert          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:20:23 by rjobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,14 @@ int main()
     std::cout << std::endl;
     std::cout << "\33[32m Assign operator \33[0m" << std::endl;
     DiamondTrap assigned = copy;
-    
+
     std::cout << std::endl;
-    std::cout << "=== member functions Test ===" << std::endl;
+    std::cout << "\33[33m ** Display vitals (stream class overloaded) **\33[0m" << std::endl;
+    std::cout << std::endl;
+    std::cout << diamond;
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << "\33[33m=== member functions Test ===\33[0m" << std::endl;
     std::cout << std::endl;
     
     std::cout << "\33[32m checking attack is ScavTrap \33[0m" << std::endl;
@@ -54,7 +59,16 @@ int main()
     std::cout << std::endl;
     std::cout << "\33[32m WhoamI test \33[0m" << std::endl;
     diamond.whoAmI();
+    std::cout << "\33[32m Testing useless \33[0m" << std::endl;
+    useless.attack("Target2");
+    useless.highFivesGuys();
+    useless.whoAmI();
 
+     std::cout << std::endl;
+    std::cout << "\33[33m ** Display vitals (stream class overloaded) **\33[0m" << std::endl;
+    std::cout << std::endl;
+    std::cout << diamond;
+    std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "\33[33m*****************************" << std::endl;
     std::cout << "=== End of Tests ===" << std::endl;
